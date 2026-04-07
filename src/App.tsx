@@ -65,7 +65,7 @@ export default function App() {
     setForm((f) => f ? { ...f, [key]: value } : f);
 
   const isOvertimeExpired = form ? new Date(form.overtimeAgreementExpiry) < new Date() : false;
-  const isLicenseMissing = form ? !form.dispatchLicenseNo.trim() : true;
+  const isLicenseMissing = !!form && !form.dispatchLicenseNo.trim();
   const isLaborMethod = form?.treatmentMethod === 'labor';
 
   const handleUpdate = () => {
@@ -82,7 +82,8 @@ export default function App() {
   const handleCancel = () => { setForm(data ? { ...data } : null); showToast('編集をキャンセルしました。', false); };
 
   const navItems = ['受発注', '請求・精算', '要員管理', '会員管理', '受発注マスタ', 'お知らせ'];
-  const sidebarGroups = [
+  type SidebarItem = { icon: string; label: string; active?: boolean };
+  const sidebarGroups: { label: string; items: SidebarItem[] }[] = [
     { label: '会員情報', items: [{ icon: '🏢', label: '会員管理', active: true }, { icon: '🏬', label: '部門管理' }, { icon: '📊', label: '利用状況' }] },
     { label: '利用者管理', items: [{ icon: '👤', label: '利用者' }, { icon: '📋', label: '一括登録' }] },
   ];
@@ -121,7 +122,7 @@ export default function App() {
             <div className="sidebar-group" key={g.label}>
               <div className="sidebar-group-label">{g.label}</div>
               {g.items.map((item) => (
-                <div key={item.label} className={`sidebar-item${(item as any).active ? ' active' : ''}`}>
+                <div key={item.label} className={`sidebar-item${item.active ? ' active' : ''}`}>
                   <span className="sidebar-icon">{item.icon}</span>{item.label}
                 </div>
               ))}
@@ -154,7 +155,7 @@ export default function App() {
                   <div className="info-row" style={{ gridColumn: '1/-1' }}>
                     <div className="info-item"><span className="info-item-label">会員ID / Member ID</span><span className="info-item-value">{form.memberId}</span></div>
                     <div className="info-item"><span className="info-item-label">登録日 / Registration Date</span><span className="info-item-value">{form.registrationDate}</span></div>
-                    <div className="info-item"><span className="info-item-label">ステータス</span><span className="info-item-value" style={{ color: 'var(--success)', fontSize: 13 }}>● 有効</span></div>
+                    <div className="info-item"><span className="info-item-label">ステータス</span><span className="info-item-value" style={{ color: form.status === 'active' ? 'var(--success)' : 'var(--danger)', fontSize: 13 }}>{form.status === 'active' ? '● 有効' : '● 無効'}</span></div>
                   </div>
                 </div>
               </CollapsibleCard>
