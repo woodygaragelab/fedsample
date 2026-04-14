@@ -87,7 +87,7 @@ export default function App() {
     <div>
       {/* ── Topbar ── */}
       <div className="topbar">
-        <div className="topbar-logo"><span className="dot" />Meeepa</div>
+        <div className="topbar-logo"><span className="dot" />JKLL</div>
         <div className="topbar-divider" />
         <div className="topbar-breadcrumb">
           <span>TopMenu</span><span className="sep">›</span>
