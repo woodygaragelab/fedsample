@@ -230,6 +230,91 @@ body { padding-top: 0; }
 .app-header .nav-link:hover { background: rgba(255,255,255,0.25); }
 .app-header .nav-link.active { background: #FF8C00; font-weight: bold; }
 
+/* ===================== 研修会システム (SCR-301〜311) ===================== */
+.ts-admin-window {
+  border:2px solid #888; border-radius:4px; background:#ECE9D8;
+  max-width:960px; margin:0 auto; box-shadow:4px 4px 12px rgba(0,0,0,.3);
+}
+.ts-title-bar {
+  background:linear-gradient(#0A246A,#3A6EA5); color:#fff;
+  padding:4px 8px; font-size:12px; font-weight:bold;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.ts-win-btns { display:flex; gap:4px; }
+.ts-win-btn {
+  width:16px; height:14px; border:1px solid #999; border-radius:2px;
+  font-size:9px; cursor:pointer; display:inline-flex; align-items:center;
+  justify-content:center; background:linear-gradient(#f0f0f0,#c0c0c0);
+}
+.ts-toolbar {
+  background:#D4D0C8; border-bottom:1px solid #999;
+  padding:4px 8px; display:flex; align-items:center; gap:6px; flex-wrap:wrap;
+}
+.ts-btn {
+  padding:2px 10px; border:1px solid #999; background:#ECE9D8;
+  border-radius:2px; cursor:pointer; font-size:12px;
+  box-shadow:1px 1px 0 #fff inset,-1px -1px 0 #888 inset;
+}
+.ts-btn:hover { background:#ddd8c8; }
+.ts-btn-primary { background:#c0392b !important; color:#fff !important; border-color:#a93226 !important; font-weight:bold; }
+.ts-btn-blue    { background:#2980b9 !important; color:#fff !important; border-color:#1a5276 !important; }
+.ts-btn-green   { background:#27ae60 !important; color:#fff !important; border-color:#1e8449 !important; }
+.ts-btn-purple  { background:#8e44ad !important; color:#fff !important; border-color:#7d3c98 !important; }
+.ts-body { padding:12px; }
+.ts-form-grid { display:grid; grid-template-columns:auto 1fr; gap:6px 10px; align-items:center; margin-bottom:12px; }
+.ts-label { font-size:12px; white-space:nowrap; color:#333; }
+.ts-input { border:1px inset #999; background:#fff; padding:2px 4px; font-size:12px; height:22px; width:100%; }
+.ts-select { border:1px solid #999; background:#fff; padding:2px; font-size:12px; height:22px; }
+.ts-list { width:100%; border-collapse:collapse; font-size:12px; margin-top:8px; }
+.ts-list th { background:#0A246A; color:#fff; padding:3px 8px; border:1px solid #555; text-align:left; }
+.ts-list td { padding:3px 8px; border:1px solid #ccc; background:#fff; }
+.ts-list tr:nth-child(even) td { background:#EEF2FF; }
+.ts-list tr.ts-sel td { background:#000080; color:#fff; }
+.ts-list tr:hover td { background:#c0c8e0; cursor:pointer; }
+.ts-group { border:1px solid #aaa; background:#f5f3ee; padding:8px 10px; margin-bottom:10px; border-radius:2px; }
+.ts-group-title { font-size:11px; font-weight:bold; color:#0A246A; border-bottom:1px solid #aaa; margin-bottom:6px; padding-bottom:3px; }
+.ts-web-frame { max-width:800px; margin:0 auto; background:#fff; border:1px solid #ddd; border-radius:4px; overflow:hidden; box-shadow:2px 4px 12px rgba(0,0,0,.15); }
+.ts-web-logo-bar { background:#fff; padding:6px 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ddd; }
+.ts-web-logo { font-size:11px; color:#555; line-height:1.3; }
+.ts-web-nav { background:#4CAF50; color:#fff; padding:6px 16px; display:flex; align-items:center; justify-content:space-between; font-size:13px; }
+.ts-member-name { font-weight:bold; }
+.ts-nav-links { display:flex; gap:12px; font-size:12px; }
+.ts-nav-links a { color:#fff; text-decoration:none; cursor:pointer; }
+.ts-web-body { padding:16px; }
+.ts-notice { background:#FFF9C4; border:1px solid #F9A825; border-radius:3px; padding:8px 12px; margin-bottom:12px; font-size:12px; }
+.ts-notice a { color:#1565C0; text-decoration:underline; cursor:pointer; }
+.ts-section-title { background:#4CAF50; color:#fff; padding:4px 10px; font-size:13px; font-weight:bold; }
+.ts-field-row { display:flex; border-bottom:1px solid #e0e0e0; }
+.ts-field-label { background:#4CAF50; color:#fff; padding:6px 10px; font-size:12px; font-weight:bold; width:140px; min-width:140px; }
+.ts-field-value { padding:6px 10px; font-size:12px; flex:1; background:#fff; }
+.ts-web-table { width:100%; border-collapse:collapse; font-size:12px; margin-top:8px; }
+.ts-web-table th { background:#4CAF50; color:#fff; padding:5px 8px; border:1px solid #388E3C; }
+.ts-web-table td { padding:5px 8px; border:1px solid #ddd; background:#fff; }
+.ts-web-table tr:nth-child(even) td { background:#F1F8E9; }
+.ts-web-btn { display:inline-block; padding:6px 16px; border-radius:3px; font-size:13px; cursor:pointer; border:none; margin:4px; }
+.ts-web-btn.green { background:#4CAF50; color:#fff; }
+.ts-web-btn.gray  { background:#9E9E9E; color:#fff; }
+.ts-web-btn.red   { background:#f44336; color:#fff; }
+.ts-web-btn.blue  { background:#1976D2; color:#fff; }
+.ts-web-btn:hover { opacity:.85; }
+.ts-web-input { border:1px solid #ccc; padding:5px 8px; width:100%; font-size:12px; border-radius:2px; margin:2px 0; }
+.ts-form-grid2 { display:grid; grid-template-columns:130px 1fr; gap:6px 12px; align-items:center; margin-bottom:8px; }
+.ts-btn-row { display:flex; gap:8px; padding:12px 0; flex-wrap:wrap; }
+.ts-alert   { background:#FFEBEE; border:1px solid #F44336; border-radius:3px; padding:8px 12px; margin-bottom:12px; font-size:12px; color:#b71c1c; }
+.ts-success { background:#E8F5E9; border:1px solid #4CAF50; border-radius:3px; padding:8px 12px; margin-bottom:12px; font-size:12px; color:#1B5E20; font-weight:bold; }
+.ts-info    { background:#E3F2FD; border:1px solid #1976D2; border-radius:3px; padding:8px 12px; margin-bottom:12px; font-size:12px; }
+.ts-two-panel { display:flex; gap:8px; }
+.ts-panel-left { flex:1; min-width:0; }
+.ts-panel-right { width:320px; flex-shrink:0; }
+.ts-badge { display:inline-block; padding:2px 6px; border-radius:10px; font-size:11px; font-weight:bold; }
+.ts-badge-blue   { background:#BBDEFB; color:#0D47A1; }
+.ts-badge-green  { background:#C8E6C9; color:#1B5E20; }
+.ts-badge-orange { background:#FFE0B2; color:#E65100; }
+.ts-badge-gray   { background:#E0E0E0; color:#424242; }
+.ts-badge-red    { background:#FFCDD2; color:#B71C1C; }
+.ts-section-gap { margin-top:16px; }
+.ts-sub-window { border:2px solid #888; border-radius:4px; background:#ECE9D8; max-width:480px; margin:0 auto; box-shadow:6px 6px 16px rgba(0,0,0,.4); }
+
 /* タイトルバー */
 .screen-title-bar {
   background: var(--blue-dark); color:#fff; padding:6px 12px;

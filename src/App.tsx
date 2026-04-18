@@ -10,6 +10,18 @@ import ScrPayment       from './screens/ScrPayment';
 import ScrInquiry       from './screens/ScrInquiry';
 import ScrWithdrawal    from './screens/ScrWithdrawal';
 
+import ScrTrainingSearch       from './screens/ScrTrainingSearch';
+import ScrTrainingSetting      from './screens/ScrTrainingSetting';
+import ScrTrainingFee          from './screens/ScrTrainingFee';
+import ScrTrainingFeeDetail    from './screens/ScrTrainingFeeDetail';
+import ScrTrainingPayment      from './screens/ScrTrainingPayment';
+import ScrTrainingApplyPre     from './screens/ScrTrainingApplyPre';
+import ScrTrainingContactList  from './screens/ScrTrainingContactList';
+import ScrTrainingApplyConfirm from './screens/ScrTrainingApplyConfirm';
+import ScrTrainingApply        from './screens/ScrTrainingApply';
+import ScrTrainingApplyComplete from './screens/ScrTrainingApplyComplete';
+import ScrTrainingApplyCancel  from './screens/ScrTrainingApplyCancel';
+
 import ScrWebLogin      from './screens/ScrWebLogin';
 import ScrWebHome       from './screens/ScrWebHome';
 import ScrWebRegInfo    from './screens/ScrWebRegInfo';
@@ -38,6 +50,19 @@ export default function App(): JSX.Element {
           <Route path="/payment"         element={<ScrPayment />} />
           <Route path="/inquiry"         element={<ScrInquiry />} />
           <Route path="/withdrawal"      element={<ScrWithdrawal />} />
+
+          {/* 研修会システム */}
+          <Route path="/training/search"         element={<ScrTrainingSearch />} />
+          <Route path="/training/setting"        element={<ScrTrainingSetting />} />
+          <Route path="/training/fee"            element={<ScrTrainingFee />} />
+          <Route path="/training/fee-detail"     element={<ScrTrainingFeeDetail />} />
+          <Route path="/training/payment"        element={<ScrTrainingPayment />} />
+          <Route path="/training/apply-pre"      element={<ScrTrainingApplyPre />} />
+          <Route path="/training/contact-list"   element={<ScrTrainingContactList />} />
+          <Route path="/training/apply-confirm"  element={<ScrTrainingApplyConfirm />} />
+          <Route path="/training/apply"          element={<ScrTrainingApply />} />
+          <Route path="/training/apply-complete" element={<ScrTrainingApplyComplete />} />
+          <Route path="/training/apply-cancel"   element={<ScrTrainingApplyCancel />} />
 
           {/* WEB マイページ */}
           <Route path="/web/login"       element={<ScrWebLogin />} />
