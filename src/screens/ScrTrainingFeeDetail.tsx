@@ -59,7 +59,7 @@ const html = `
         <tr>
           <td><input type="checkbox"></td>
           <td>A1991</td>
-          <td>うめとまと医療法人</td>
+          <td>うめとまとXX法人</td>
           <td>2021/07/08</td>
           <td><span class="ts-badge ts-badge-blue">通知済</span></td>
           <td>2021/07/01</td>
@@ -69,7 +69,7 @@ const html = `
         <tr>
           <td><input type="checkbox"></td>
           <td>A2050</td>
-          <td>仮会員病院</td>
+          <td>仮会員施設</td>
           <td>2021/07/20</td>
           <td><span class="ts-badge ts-badge-gray">未通知</span></td>
           <td></td>

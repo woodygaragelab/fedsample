@@ -86,7 +86,7 @@ const html = `
           </div>
           <div style="margin-top:8px;padding:6px;background:#f0f8e8;border:1px solid #ccc;border-radius:2px;font-size:11px;">
             <div><b>A2008 正会員 ためし法人</b></div>
-            <div>ためし病院 試し 太郎</div>
+            <div>ためし施設 試し 太郎</div>
           </div>
         </div>
         <div class="ts-group" style="margin-top:8px;">

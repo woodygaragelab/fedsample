@@ -1,14 +1,8 @@
 // SCR-310 申込取消画面
 const html = `
 <div class="ts-web-frame">
-  <div class="ts-web-logo-bar">
-    <div class="ts-web-logo">一般社団法人<br>日本リハビリテーション病院・施設協会</div>
-  </div>
   <div class="ts-web-nav">
-    <span class="ts-member-name">A1991 うめとまと医療法人 様</span>
-    <div class="ts-nav-links">
-      <a>Home</a><a>登録情報</a><a>お問い合わせ</a><a>ログアウト</a>
-    </div>
+    <span class="ts-member-name">A1991 うめとまとXX法人 様</span>
   </div>
   <div class="ts-web-body">
     <div class="ts-btn-row" style="padding-bottom:8px;">
@@ -29,7 +23,7 @@ const html = `
         <tr><th>部署</th><th>役職</th><th>氏名</th><th>メールアドレス</th></tr>
       </thead>
       <tbody>
-        <tr><td>リハビリテーション科</td><td>なし</td><td>星野 市三</td><td>hoshino@aaa.com</td></tr>
+        <tr><td>リリリリ科</td><td>なし</td><td>星野 市三</td><td>hoshino@aaa.com</td></tr>
       </tbody>
     </table>
     <div class="ts-section-gap"></div>

@@ -6,9 +6,9 @@ const html = `<div class="web-page" style="max-width:900px; margin:0 auto; borde
       <table class="web-form-table" style="margin-bottom:12px;">
         <tr><td>法人名 ※</td><td><input type="text" style="width:300px;" value="ためし法人"></td></tr>
         <tr><td>法人名フリガナ</td><td><input type="text" style="width:300px;" value="タメシホウジン"></td></tr>
-        <tr><td>施設名 ※</td><td><input type="text" style="width:300px;" value="ためし病院"></td></tr>
+        <tr><td>施設名 ※</td><td><input type="text" style="width:300px;" value="ためし施設"></td></tr>
         <tr><td>施設名フリガナ</td><td><input type="text" style="width:300px;" value="タメシビョウイン"></td></tr>
-        <tr><td>施設種別</td><td><select style="width:150px;"><option>病院</option><option>クリニック</option></select></td></tr>
+        <tr><td>施設種別</td><td><select style="width:150px;"><option>施設</option><option>クリニック</option></select></td></tr>
         <tr><td>郵便番号 ※</td><td><input type="text" value="100001" style="width:80px;"></td></tr>
         <tr><td>住所 ※</td><td><input type="text" style="width:300px;" value="東京都千代田区1-1"></td></tr>
         <tr><td>TEL ※</td><td><input type="text" value="03-2222-3333" style="width:130px;"></td></tr>

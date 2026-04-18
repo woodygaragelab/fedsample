@@ -37,7 +37,7 @@ const html = `<div class="admin-win">
           </div>
           <table class="list-tbl" style="font-size:11px; margin-bottom:6px;">
             <tr><th>会員No</th><th>法人名</th><th>施設名</th><th>登録者名</th></tr>
-            <tr class="selected"><td>A2008</td><td>ためし法人</td><td>ためし病院</td><td>試し 太郎</td></tr>
+            <tr class="selected"><td>A2008</td><td>ためし法人</td><td>ためし施設</td><td>試し 太郎</td></tr>
           </table>
           <table class="list-tbl" style="font-size:11px; margin-bottom:6px;">
             <tr><th>内容</th><th>完了日</th><th>金額</th><th>処理状態</th></tr>

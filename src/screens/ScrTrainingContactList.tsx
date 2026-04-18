@@ -1,14 +1,8 @@
 // SCR-306 WEBマイページ ご対応リスト画面
 const html = `
 <div class="ts-web-frame">
-  <div class="ts-web-logo-bar">
-    <div class="ts-web-logo">一般社団法人<br>日本リハビリテーション病院・施設協会</div>
-  </div>
   <div class="ts-web-nav">
     <span class="ts-member-name">A2008 ためし法人 様</span>
-    <div class="ts-nav-links">
-      <a>Home</a><a>登録情報</a><a>お問い合わせ</a><a>ログアウト</a>
-    </div>
   </div>
   <div class="ts-web-body">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
@@ -58,7 +52,7 @@ const html = `
         <tr>
           <td>2188</td>
           <td>2021/07/01</td>
-          <td>【研修会】[テスト]地域リハビリテーション概論Vol101（正会員）</td>
+          <td>【研修会】[テスト]地域リリリリ概論Vol101（正会員）</td>
           <td><span class="ts-badge ts-badge-gray">取消</span></td>
           <td></td>
           <td></td>
@@ -67,7 +61,7 @@ const html = `
         <tr>
           <td>2185</td>
           <td>2021/07/01</td>
-          <td>【研修会】[テスト]地域リハビリテーション概論Vol101（正会員）</td>
+          <td>【研修会】[テスト]地域リリリリ概論Vol101（正会員）</td>
           <td><span class="ts-badge ts-badge-gray">未着手</span></td>
           <td></td>
           <td></td>
@@ -79,7 +73,7 @@ const html = `
         <tr>
           <td>2165</td>
           <td>2021/06/25</td>
-          <td><a style="color:#1565C0;cursor:pointer;">【申込会】[テスト]地域リハビリテーション概論Vol101（正会員）</a></td>
+          <td><a style="color:#1565C0;cursor:pointer;">【申込会】[テスト]地域リリリリ概論Vol101（正会員）</a></td>
           <td><span class="ts-badge ts-badge-green">入金済</span></td>
           <td>7/1</td>
           <td></td>

@@ -3,7 +3,7 @@ import ScreenTitleBar from '../components/ScreenTitleBar';
 // SCR-203 申込完了ページ
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="web-page" style="max-width:900px; margin:0 auto; border:1px solid #ddd;">
-    <div class="public-header">🔵 一般社団法人 日本リハビリテーション病院・施設協会</div>
+    <div class="public-header">🔵 一般社団法人 日本リリリリ施設・施設協会</div>
     <div class="public-body">
       <div class="web-section-hdr">新規申し込み</div>
       <div style="background:#fff; border:1px solid #ddd; padding:30px; text-align:center;">
@@ -12,7 +12,7 @@ const html = `<div class="web-page" style="max-width:900px; margin:0 auto; borde
         <div style="font-size:12px; color:#555; line-height:1.8;">
           <p>ご登録いただいたメールアドレス（複数のメールアドレスをご登録された場合はすべてのアドレス）宛に受け付けました旨のメールをお送りします。</p>
           <p>（メールは15分程度で届きます）</p>
-          <p>メールが届かない場合は日本リハビリテーション病院施設協会へご連絡ください。</p>
+          <p>メールが届かない場合は日本リリリリ施設施設協会へご連絡ください。</p>
           <p style="margin-top:12px; font-size:11px; color:#888;">TEL：03-5260-6146&emsp;Mail：member@rehakyoh.jp</p>
         </div>
       </div>

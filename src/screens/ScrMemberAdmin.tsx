@@ -22,8 +22,8 @@ const upperHtml = `<div class="admin-win">
             <div class="lbl">会員No</div><div class="val"><input type="text" style="width:80px;" value="A2008"> &nbsp; Id: <span>690</span></div>
             <div class="lbl">会員区分 ※</div><div class="val"><select style="width:100px;"><option selected>正会員</option><option>賛助会員</option><option>個人会員</option></select></div>
             <div class="lbl">入会日</div><div class="val"><input type="text" value="2021/07/14" style="width:90px;"></div>
-            <div class="lbl">法人名 ※</div><div class="val"><input type="text" style="width:95%;" value="医療法人サンプル会"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="イリョウホウジンサンプルカイ"></div>
-            <div class="lbl">施設名 ※</div><div class="val"><input type="text" style="width:95%;" value="サンプルリハ病院"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="サンプルリハビョウイン"></div>
+            <div class="lbl">法人名 ※</div><div class="val"><input type="text" style="width:95%;" value="XX法人サンプル会"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="イリョウホウジンサンプルカイ"></div>
+            <div class="lbl">施設名 ※</div><div class="val"><input type="text" style="width:95%;" value="サンプルリリ施設"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="サンプルリリビョウイン"></div>
             <div class="lbl">法人代表者役職 ※</div><div class="val"><input type="text" style="width:95%;" value="代表"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="ダイヒョウ"></div>
             <div class="lbl">法人代表者名 ※</div><div class="val"><input type="text" style="width:95%;" value="志公園 太郎"><br><input type="text" style="width:95%; margin-top:2px;" placeholder="フリガナ" value="シバコウエン タロウ"></div>
           </div>
@@ -34,7 +34,7 @@ const upperHtml = `<div class="admin-win">
             <div class="lbl">年会費未請求</div><div class="val"><input type="checkbox"></div>
             <div class="lbl">年会費未送信</div><div class="val"><input type="checkbox"></div>
             <div class="lbl">理事施設</div><div class="val"><input type="checkbox"></div>
-            <div class="lbl">施設種別</div><div class="val"><select style="width:120px;"><option>（選択）</option><option>病院</option><option>クリニック</option><option>施設</option></select></div>
+            <div class="lbl">施設種別</div><div class="val"><select style="width:120px;"><option>（選択）</option><option>施設</option><option>クリニック</option><option>施設</option></select></div>
             <div class="lbl">マイページ管理<br>メール ※</div><div class="val"><input type="text" style="width:95%;" value="shibakouen@aaa.com"></div>
             <div class="lbl">備考</div><div class="val"><textarea style="width:95%; height:40px;"></textarea></div>
             <div class="lbl">作成日時</div><div class="val" style="font-size:11px;">2021/07/14 18:32:11<br>作成者：</div>

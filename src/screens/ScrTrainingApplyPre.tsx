@@ -1,14 +1,8 @@
 // SCR-305 研修会申込画面（仮申込）
 const html = `
 <div class="ts-web-frame">
-  <div class="ts-web-logo-bar">
-    <div class="ts-web-logo">一般社団法人<br>日本リハビリテーション病院・施設協会</div>
-  </div>
   <div class="ts-web-nav">
     <span class="ts-member-name">A2008 ためし法人 様</span>
-    <div class="ts-nav-links">
-      <a>Home</a><a>登録情報</a><a>お問い合わせ</a><a>ログアウト</a>
-    </div>
   </div>
   <div class="ts-web-body">
     <div class="ts-info">

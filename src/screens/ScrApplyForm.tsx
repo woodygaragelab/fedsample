@@ -4,7 +4,7 @@ import ScreenTitleBar from '../components/ScreenTitleBar';
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="public-page web-page" style="max-width:900px; margin:0 auto; border:1px solid #ddd;">
     <div class="public-header">
-      🔵 一般社団法人 日本リハビリテーション病院・施設協会
+      🔵 一般社団法人 日本リリリリ施設・施設協会
     </div>
     <div class="public-body">
       <div class="web-section-hdr">新規申し込み</div>
@@ -18,11 +18,11 @@ const html = `<div class="public-page web-page" style="max-width:900px; margin:0
       <div class="pub-form-section">
         <div class="pub-section-title">法人・施設の基本情報</div>
         <div class="pub-form-content">
-          <div class="pub-row"><label>法人名 ※</label><input type="text" value="医療法人サンプル会" style="width:280px;"></div>
+          <div class="pub-row"><label>法人名 ※</label><input type="text" value="XX法人サンプル会" style="width:280px;"></div>
           <div class="pub-row"><label>法人名フリガナ ※</label><input type="text" value="イショウホウジンサンプルカイ" style="width:280px;"></div>
-          <div class="pub-row"><label>施設名 ※</label><input type="text" value="サンプルリハ病院" style="width:280px;"></div>
-          <div class="pub-row"><label>施設名フリガナ ※</label><input type="text" value="サンプルリハビョウイン" style="width:280px;"></div>
-          <div class="pub-row"><label>施設種別 ※</label><select style="width:200px;"><option selected>病院</option><option>クリニック</option><option>施設</option></select></div>
+          <div class="pub-row"><label>施設名 ※</label><input type="text" value="サンプルリリ施設" style="width:280px;"></div>
+          <div class="pub-row"><label>施設名フリガナ ※</label><input type="text" value="サンプルリリビョウイン" style="width:280px;"></div>
+          <div class="pub-row"><label>施設種別 ※</label><select style="width:200px;"><option selected>施設</option><option>クリニック</option><option>施設</option></select></div>
           <div class="pub-row"><label>郵便番号 ※</label><input type="text" value="1060051" style="width:80px;"> <button class="btn btn-gray btn-sm">住所検索</button></div>
           <div class="pub-row"><label>都道府県 ※</label><select style="width:100px;"><option selected>東京都</option></select></div>
           <div class="pub-row"><label>住所 ※</label><input type="text" value="東京都港区芝公園1-1" style="width:280px;"></div>

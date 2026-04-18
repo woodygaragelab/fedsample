@@ -1,14 +1,8 @@
 // SCR-308 研修会申込画面（申込実行）
 const html = `
 <div class="ts-web-frame">
-  <div class="ts-web-logo-bar">
-    <div class="ts-web-logo">一般社団法人<br>日本リハビリテーション病院・施設協会</div>
-  </div>
   <div class="ts-web-nav">
     <span class="ts-member-name">A2008 ためし法人 様</span>
-    <div class="ts-nav-links">
-      <a>Home</a><a>登録情報</a><a>お問い合わせ</a><a>ログアウト</a>
-    </div>
   </div>
   <div class="ts-web-body">
     <div class="ts-btn-row" style="padding-bottom:8px;">
@@ -28,8 +22,8 @@ const html = `
         <tr><th>所属</th><th>役職</th><th>氏名</th><th>メールアドレス</th></tr>
       </thead>
       <tbody>
-        <tr><td>リハビリテーション科</td><td>なし</td><td>山田 幸一</td><td>aeo@aaa.com</td></tr>
-        <tr><td>リハビリテーション科</td><td>医師</td><td>山田 一</td><td>odmeds@aaa.com</td></tr>
+        <tr><td>リリリリ科</td><td>なし</td><td>山田 幸一</td><td>aeo@aaa.com</td></tr>
+        <tr><td>リリリリ科</td><td>医師</td><td>山田 一</td><td>odmeds@aaa.com</td></tr>
       </tbody>
     </table>
     <div class="ts-section-gap"></div>
