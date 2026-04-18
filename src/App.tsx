@@ -26,8 +26,11 @@ export default function App(): JSX.Element {
       <Header />
       <main className="app-main">
         <Routes>
+          {/* WEB マイページ ログインを初期画面に */}
+          <Route path="/"                element={<Navigate to="/web/login" replace />} />
+
           {/* 管理システム */}
-          <Route path="/"                element={<ScrTopMenu />} />
+          <Route path="/top"             element={<ScrTopMenu />} />
           <Route path="/member/search"   element={<ScrMemberSearch />} />
           <Route path="/member/admin"    element={<ScrMemberAdmin />} />
           <Route path="/admission"       element={<ScrAdmission />} />
