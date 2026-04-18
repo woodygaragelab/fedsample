@@ -1,0 +1,50 @@
+// ルート定義（全画面の一元管理）
+
+export type ScreenGroup = '管理システム' | 'WEBマイページ' | 'WEB入会申込';
+
+export interface RouteDef {
+  path: string;
+  id: string;
+  label: string;
+  group: ScreenGroup;
+}
+
+export interface TopMenuItem {
+  label: string;
+  path: string;
+}
+
+export const routes: RouteDef[] = [
+  // 管理システム
+  { path: '/',              id: 'SCR-001', label: 'TopMenu',        group: '管理システム' },
+  { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理システム' },
+  { path: '/member/admin',  id: 'SCR-003', label: '会員管理',         group: '管理システム' },
+  { path: '/admission',     id: 'SCR-004', label: '◆入会',           group: '管理システム' },
+  { path: '/payment',       id: 'SCR-006', label: '入金システム',     group: '管理システム' },
+  { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理システム' },
+  { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理システム' },
+  // WEBマイページ
+  { path: '/web/login',     id: 'SCR-101', label: 'ログイン',         group: 'WEBマイページ' },
+  { path: '/web/home',      id: 'SCR-102', label: 'ご対応リスト',     group: 'WEBマイページ' },
+  { path: '/web/reginfo',   id: 'SCR-103', label: '登録情報',         group: 'WEBマイページ' },
+  { path: '/web/contact',   id: 'SCR-104', label: '問い合わせ',       group: 'WEBマイページ' },
+  { path: '/web/withdraw',  id: 'SCR-105', label: '退会届',           group: 'WEBマイページ' },
+  // WEB入会申込
+  { path: '/apply/form',    id: 'SCR-201', label: '申込フォーム',     group: 'WEB入会申込' },
+  { path: '/apply/confirm', id: 'SCR-202', label: '確認ページ',       group: 'WEB入会申込' },
+  { path: '/apply/complete',id: 'SCR-203', label: '完了ページ',       group: 'WEB入会申込' },
+];
+
+// TopMenu プルダウン用: 処理名 → 遷移先パス
+export const topMenuItems: TopMenuItem[] = [
+  { label: '会員検索',       path: '/member/search' },
+  { label: '会員管理',       path: '/member/admin'  },
+  { label: '入会',           path: '/admission'     },
+  { label: '入会費検索',     path: '/fee/search'    },
+  { label: '入金',           path: '/payment'       },
+  { label: '問合せ',         path: '/inquiry'       },
+  { label: '退会',           path: '/withdrawal'    },
+  { label: 'マイページ ログイン', path: '/web/login' },
+  { label: 'マイページ ご対応リスト', path: '/web/home' },
+  { label: 'WEB入会 申込フォーム', path: '/apply/form' },
+];
