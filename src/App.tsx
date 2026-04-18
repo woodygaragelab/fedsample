@@ -51,7 +51,7 @@ export default function App(): JSX.Element {
           <Route path="/apply/confirm"   element={<ScrApplyConfirm />} />
           <Route path="/apply/complete"  element={<ScrApplyComplete />} />
 
-          {/* 不一致は TopMenu へ */}
+          {/* 不一致は ログインへ */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

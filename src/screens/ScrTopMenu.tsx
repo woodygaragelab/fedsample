@@ -1,5 +1,3 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-001 TopMenu（トップメニュー）
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div style="display:flex; justify-content:center;">
@@ -37,7 +35,6 @@ const html = `<div style="display:flex; justify-content:center;">
 export default function ScrTopMenu(): JSX.Element {
   return (
     <div className="screen active" id="scr001">
-      <ScreenTitleBar id="SCR-001" title="TopMenu（トップメニュー）" subtitle="管理システム ／ 運用管理者" />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

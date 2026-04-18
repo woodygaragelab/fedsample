@@ -1,5 +1,3 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-006 入金システム画面
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="admin-win">
@@ -58,7 +56,6 @@ const html = `<div class="admin-win">
 export default function ScrPayment(): JSX.Element {
   return (
     <div className="screen active" id="scr006">
-      <ScreenTitleBar id="SCR-006" title="入金システム画面" subtitle="管理システム ／ 運用管理者" />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

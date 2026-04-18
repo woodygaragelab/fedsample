@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ScreenTitleBar from '../components/ScreenTitleBar';
+
 
 // SCR-003 会員管理
 type TabId = 't1' | 't2' | 't3' | 't4' | 't5';
@@ -110,11 +110,6 @@ export default function ScrMemberAdmin(): JSX.Element {
   const [activeTab, setActiveTab] = useState<TabId>('t1');
   return (
     <div className="screen active" id="scr003">
-      <ScreenTitleBar
-        id="SCR-003"
-        title="会員管理画面"
-        subtitle="管理システム ／ 運用管理者　（タブ5構成）"
-      />
       <div
         dangerouslySetInnerHTML={{
           __html: upperHtml,

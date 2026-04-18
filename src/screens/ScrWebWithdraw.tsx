@@ -1,18 +1,5 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-105 退会届ページ
-// 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="web-page" style="max-width:900px; margin:0 auto; border:1px solid #ddd;">
-    <div class="web-header">
-      <div class="site-name">🔵 日本リハビリテーション病院・施設協会</div>
-      <div><nav>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">Home</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">登録情報</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">問い合わせ</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px; font-weight:bold; text-decoration:underline;">退会届</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">ログアウト</a>
-      </nav></div>
-    </div>
     <div class="web-body">
       <div class="web-section-hdr">退会届</div>
       <p style="font-size:12px; margin-bottom:10px; color:#555;">退会理由により、該当するものをお選びください。</p>
@@ -44,7 +31,7 @@ const html = `<div class="web-page" style="max-width:900px; margin:0 auto; borde
 export default function ScrWebWithdraw(): JSX.Element {
   return (
     <div className="screen active" id="scr105">
-      <ScreenTitleBar id="SCR-105" title="退会届ページ" subtitle="WEB会員マイページ ／ 会員" />
+
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

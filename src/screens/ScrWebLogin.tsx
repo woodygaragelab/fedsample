@@ -1,12 +1,5 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-101 ログイン画面（WEB会員マイページ）
-// 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="web-page" style="max-width:800px; margin:0 auto; border:1px solid #ddd;">
-    <div class="public-header">
-      <div>🔵 一般社団法人 日本リハビリテーション病院・施設協会</div>
-      <div style="font-size:11px;">協会会員ページです</div>
-    </div>
     <div style="display:flex; padding:20px; gap:20px; background:#f5f5f5;">
       <!-- ログインフォーム -->
       <div style="background:#fff; border:1px solid #ccc; padding:20px; width:260px; flex-shrink:0;">
@@ -46,7 +39,7 @@ const html = `<div class="web-page" style="max-width:800px; margin:0 auto; borde
 export default function ScrWebLogin(): JSX.Element {
   return (
     <div className="screen active" id="scr101">
-      <ScreenTitleBar id="SCR-101" title="ログイン画面（WEB会員マイページ）" subtitle="WEB会員マイページ ／ 会員" />
+
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

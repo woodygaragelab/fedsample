@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-005 から移植した入会費マスタ
 const FEE_LIST = [
   { id: 6,  title: '2021年度入会時年会費' },
@@ -14,7 +12,6 @@ export default function ScrAdmission(): JSX.Element {
 
   return (
     <div className="screen active" id="scr004">
-      <ScreenTitleBar id="SCR-004" title="◆入会画面" subtitle="管理システム ／ 運用管理者" />
       <div className="admin-win">
         <div className="admin-titlebar">🔵 会員 担当者1<span>✕</span></div>
         <div className="admin-toolbar">

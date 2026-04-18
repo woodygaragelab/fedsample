@@ -1,18 +1,5 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-103 登録情報ページ
-// 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="web-page" style="max-width:900px; margin:0 auto; border:1px solid #ddd;">
-    <div class="web-header">
-      <div class="site-name">🔵 日本リハビリテーション病院・施設協会</div>
-      <div><nav style="display:inline;">
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">Home</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px; font-weight:bold; text-decoration:underline;">登録情報</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">問い合わせ</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">退会届</a>
-        <a href="#" style="color:#fff; margin:0 8px; font-size:12px;">ログアウト</a>
-      </nav></div>
-    </div>
     <div class="web-body">
       <div class="alert-box" style="display:none;">登録完了しました。</div>
       <div class="web-section-hdr">登録情報</div>
@@ -47,7 +34,7 @@ const html = `<div class="web-page" style="max-width:900px; margin:0 auto; borde
 export default function ScrWebRegInfo(): JSX.Element {
   return (
     <div className="screen active" id="scr103">
-      <ScreenTitleBar id="SCR-103" title="登録情報ページ" subtitle="WEB会員マイページ ／ 会員" />
+
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

@@ -1,5 +1,3 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-008 ◆退会画面
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="admin-win" style="max-width:600px;">
@@ -34,7 +32,6 @@ const html = `<div class="admin-win" style="max-width:600px;">
 export default function ScrWithdrawal(): JSX.Element {
   return (
     <div className="screen active" id="scr008">
-      <ScreenTitleBar id="SCR-008" title="◆退会画面" subtitle="管理システム ／ 運用管理者" />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

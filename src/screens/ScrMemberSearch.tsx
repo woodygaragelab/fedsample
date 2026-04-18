@@ -1,5 +1,3 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-002 会員検索画面
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="admin-win">
@@ -41,7 +39,6 @@ const html = `<div class="admin-win">
 export default function ScrMemberSearch(): JSX.Element {
   return (
     <div className="screen active" id="scr002">
-      <ScreenTitleBar id="SCR-002" title="会員検索画面" subtitle="管理システム ／ 運用管理者" />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );

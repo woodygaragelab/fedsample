@@ -1,5 +1,3 @@
-import ScreenTitleBar from '../components/ScreenTitleBar';
-
 // SCR-005 入会費検索画面
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div style="display:flex; justify-content:center;">
@@ -25,7 +23,6 @@ const html = `<div style="display:flex; justify-content:center;">
 export default function ScrFeeSearch(): JSX.Element {
   return (
     <div className="screen active" id="scr005">
-      <ScreenTitleBar id="SCR-005" title="入会費検索画面" subtitle="管理システム ／ 運用管理者" />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
