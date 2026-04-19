@@ -49,16 +49,16 @@ const lowerHtml = `<div class="admin-statusbar"><span>会員管理</span><span>N
 
 const tabPanels: Record<TabId, string> = {
   t1: `
-          <div class="info-grid" style="font-size:11px;">
+          <div class="info-grid two-col" style="font-size:11px;">
             <div class="lbl">郵便番号 ※</div><div class="val"><input type="text" value="1050011" style="width:80px;"> <span style="font-size:11px; color:#555;">都道府県区分：</span><select style="width:70px;"><option selected>東京都</option></select></div>
-            <div class="lbl">住所 ※</div><div class="val" style="grid-column:span 3;"><input type="text" style="width:320px;" value="東京都港区芝公園1-1"></div>
+            <div class="lbl">住所 ※</div><div class="val"><input type="text" style="width:95%;" value="東京都港区芝公園1-1"></div>
             <div class="lbl">TEL ※</div><div class="val"><input type="text" value="03-1111-1010" style="width:120px;"> 内線<input type="text" style="width:60px;"></div>
             <div class="lbl">FAX</div><div class="val"><input type="text" style="width:120px;"></div>
-            <div class="lbl">メルアド1〜4</div><div class="val"><input type="text" style="width:200px;" placeholder="メルアド1"> <input type="text" style="width:200px;" placeholder="メルアド2"></div>
-            <div class="lbl">連絡担当部署 ※</div><div class="val"><input type="text" style="width:200px;" value="連絡担当組織"></div>
-            <div class="lbl">担当者名 ※</div><div class="val"><input type="text" style="width:120px;" value="志公園 太郎"> <input type="text" style="width:120px;" placeholder="フリガナ" value="シバコウエン タロウ"></div>
-            <div class="lbl">担当連絡メール ※</div><div class="val"><input type="text" style="width:200px;" value="shibakouen@aaa.com"></div>
-            <div class="lbl">その他メルアド</div><div class="val"><input type="text" style="width:200px;" placeholder="その他メルアド1"> <input type="text" style="width:200px;" placeholder="その他メルアド2"></div>
+            <div class="lbl">メルアド1〜4</div><div class="val"><input type="text" style="width:45%;" placeholder="メルアド1"> <input type="text" style="width:45%;" placeholder="メルアド2"></div>
+            <div class="lbl">連絡担当部署 ※</div><div class="val"><input type="text" style="width:95%;" value="連絡担当組織"></div>
+            <div class="lbl">担当者名 ※</div><div class="val"><input type="text" style="width:45%;" value="志公園 太郎"> <input type="text" style="width:45%;" placeholder="フリガナ" value="シバコウエン タロウ"></div>
+            <div class="lbl">担当連絡メール ※</div><div class="val"><input type="text" style="width:95%;" value="shibakouen@aaa.com"></div>
+            <div class="lbl">その他メルアド</div><div class="val"><input type="text" style="width:45%;" placeholder="その他メルアド1"> <input type="text" style="width:45%;" placeholder="その他メルアド2"></div>
           </div>
         </div>
         <!-- タブ②送付先 --`,

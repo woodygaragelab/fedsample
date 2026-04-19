@@ -1,6 +1,6 @@
 // ルート定義（全画面の一元管理）
 
-export type ScreenGroup = '管理システム' | 'WEBマイページ' | 'WEB入会申込';
+export type ScreenGroup = '管理者メニュー' | 'WEBマイページ' | 'WEB入会申込';
 
 export interface RouteDef {
   path: string;
@@ -15,20 +15,20 @@ export interface TopMenuItem {
 }
 
 export const routes: RouteDef[] = [
-  // 管理システム
-  { path: '/',              id: 'SCR-001', label: 'TopMenu',        group: '管理システム' },
-  { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理システム' },
-  { path: '/member/admin',  id: 'SCR-003', label: '会員管理',         group: '管理システム' },
-  { path: '/admission',     id: 'SCR-004', label: '◆入会',           group: '管理システム' },
-  { path: '/payment',       id: 'SCR-006', label: '入金システム',     group: '管理システム' },
-  { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理システム' },
-  { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理システム' },
+  // 管理者メニュー
+  { path: '/',              id: 'SCR-001', label: 'TopMenu',        group: '管理者メニュー' },
+  { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理者メニュー' },
+  { path: '/member/admin',  id: 'SCR-003', label: '会員管理',         group: '管理者メニュー' },
+  { path: '/admission',     id: 'SCR-004', label: '◆入会',           group: '管理者メニュー' },
+  { path: '/payment',       id: 'SCR-006', label: '入金システム',     group: '管理者メニュー' },
+  { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理者メニュー' },
+  { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理者メニュー' },
   // 研修会システム (SCR-301〜311)
-  { path: '/training/search',          id: 'SCR-301', label: '研修会設定検索',    group: '管理システム' },
-  { path: '/training/setting',         id: 'SCR-302', label: '研修会設定',         group: '管理システム' },
-  { path: '/training/fee',             id: 'SCR-303', label: '研修会費設定',       group: '管理システム' },
-  { path: '/training/fee-detail',      id: 'SCR-304', label: '費用一括設定詳細',   group: '管理システム' },
-  { path: '/training/payment',         id: 'SCR-311', label: '研修会入金',         group: '管理システム' },
+  { path: '/training/search',          id: 'SCR-301', label: '研修会設定検索',    group: '管理者メニュー' },
+  { path: '/training/setting',         id: 'SCR-302', label: '研修会設定',         group: '管理者メニュー' },
+  { path: '/training/fee',             id: 'SCR-303', label: '研修会費設定',       group: '管理者メニュー' },
+  { path: '/training/fee-detail',      id: 'SCR-304', label: '費用一括設定詳細',   group: '管理者メニュー' },
+  { path: '/training/payment',         id: 'SCR-311', label: '研修会入金',         group: '管理者メニュー' },
   // WEBマイページ
   { path: '/web/home',                 id: 'SCR-102', label: 'ご対応リスト',       group: 'WEBマイページ' },
   { path: '/training/contact-list',    id: 'SCR-306', label: 'ご対応リスト(研)',   group: 'WEBマイページ' },
