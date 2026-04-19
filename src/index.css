@@ -167,6 +167,15 @@
 html, body, #root { height: 100%; }
 body { padding-top: 0; }
 
+/* 画面IDフッター */
+.screen-id-footer {
+  position: fixed; bottom: 0; right: 0;
+  background: rgba(0,0,0,0.45); color: #ccc;
+  font-size: 11px; padding: 2px 8px;
+  border-top-left-radius: 4px;
+  pointer-events: none; z-index: 9999;
+}
+
 /* ページ本体コンテナ */
 .app-main {
   padding: 10px 16px 30px;
@@ -220,6 +229,20 @@ body { padding-top: 0; }
   display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
   padding: 5px 10px;
   background: #2a5298;
+}
+/* 3段目: サブメニュー項目 */
+.app-header .header-row3 {
+  display: flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  padding: 4px 10px 4px 24px;
+  background: #1a3a7a;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+/* サブメニューカテゴリボタン */
+.app-header .submenu-btn {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 .app-header .nav-link {
   background: rgba(255,255,255,0.12);

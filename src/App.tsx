@@ -1,5 +1,17 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
+import { routes } from './routes';
+
+function ScreenIdFooter(): JSX.Element {
+  const { pathname } = useLocation();
+  const route = routes.find((r) =>
+    r.path === '/' ? pathname === '/' : pathname.startsWith(r.path)
+  );
+  if (!route) return <></>;
+  return (
+    <div className="screen-id-footer">{route.id}</div>
+  );
+}
 
 import ScrTopMenu       from './screens/ScrTopMenu';
 import ScrMemberSearch  from './screens/ScrMemberSearch';
@@ -80,6 +92,7 @@ export default function App(): JSX.Element {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+      <ScreenIdFooter />
     </>
   );
 }

@@ -18,9 +18,9 @@ export const routes: RouteDef[] = [
   // 管理者メニュー
   { path: '/',              id: 'SCR-001', label: 'TopMenu',        group: '管理者メニュー' },
   { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理者メニュー' },
-  { path: '/member/admin',  id: 'SCR-003', label: '会員管理',         group: '管理者メニュー' },
+  { path: '/member/admin',  id: 'SCR-003', label: '会員',             group: '管理者メニュー' },
   { path: '/admission',     id: 'SCR-004', label: '◆入会',           group: '管理者メニュー' },
-  { path: '/payment',       id: 'SCR-006', label: '入金システム',     group: '管理者メニュー' },
+  { path: '/payment',       id: 'SCR-006', label: '入金',           group: '管理者メニュー' },
   { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理者メニュー' },
   { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理者メニュー' },
   // 研修会システム (SCR-301〜311)
