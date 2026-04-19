@@ -119,7 +119,7 @@ export default function Header(): JSX.Element {
           <NavLink
             key={r.path}
             to={r.path}
-            end={r.path === '/'}
+            end
             className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
             title={`${r.id} ${r.label}`}
           >
@@ -129,6 +129,7 @@ export default function Header(): JSX.Element {
         {groups[selectedGroup].find((r) => r.id === 'SCR-101') && (
           <NavLink
             to="/web/login"
+            end
             className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
             title="SCR-101 ログイン"
             style={{ marginLeft: 'auto' }}
@@ -145,7 +146,7 @@ export default function Header(): JSX.Element {
             <NavLink
               key={r.path}
               to={r.path}
-              end={r.path === '/'}
+              end
               className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
               title={`${r.id} ${r.label}`}
             >
