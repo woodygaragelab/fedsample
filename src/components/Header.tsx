@@ -11,12 +11,13 @@ const GROUP_DEFAULT_PATH: Record<ScreenGroup, string> = {
   'WEB入会申込':  '/apply/form',
 };
 
-type SubMenuDef = { label: string; ids: string[] };
+type SubMenuDef = { label: string; ids: string[]; defaultPath?: string };
 
 const SUB_MENUS: Partial<Record<ScreenGroup, SubMenuDef[]>> = {
   '管理者メニュー': [
-    { label: '会員管理', ids: ['SCR-002', 'SCR-003', 'SCR-004', 'SCR-007', 'SCR-008'] },
-    { label: '研修', ids: ['SCR-301', 'SCR-302', 'SCR-303', 'SCR-304', 'SCR-311'] },
+    { label: '会員管理', ids: ['SCR-002', 'SCR-003', 'SCR-004', 'SCR-006', 'SCR-007', 'SCR-008'], defaultPath: '/member/search' },
+    { label: '研修', ids: ['SCR-301', 'SCR-302', 'SCR-303', 'SCR-304', 'SCR-311'], defaultPath: '/training/search' },
+    { label: '年会費管理', ids: ['SCR-401', 'SCR-402', 'SCR-403', 'SCR-404', 'SCR-411'], defaultPath: '/annual/search' },
   ],
   'WEBマイページ': [
     { label: '研修申込', ids: ['SCR-305', 'SCR-306', 'SCR-307', 'SCR-308', 'SCR-309', 'SCR-310'] },
@@ -82,8 +83,10 @@ export default function Header(): JSX.Element {
     navigate(GROUP_DEFAULT_PATH[g]);
   }
 
-  function handleSubMenuToggle(label: string) {
-    setOpenSubMenu((prev) => (prev === label ? null : label));
+  function handleSubMenuToggle(sm: SubMenuDef) {
+    const isOpening = openSubMenu !== sm.label;
+    setOpenSubMenu(isOpening ? sm.label : null);
+    if (isOpening && sm.defaultPath) navigate(sm.defaultPath);
   }
 
   return (
@@ -110,7 +113,7 @@ export default function Header(): JSX.Element {
           <button
             key={sm.label}
             className={'nav-link submenu-btn' + (openSubMenu === sm.label ? ' active' : '')}
-            onClick={() => handleSubMenuToggle(sm.label)}
+            onClick={() => handleSubMenuToggle(sm)}
           >
             {sm.label} {openSubMenu === sm.label ? '▴' : '▾'}
           </button>

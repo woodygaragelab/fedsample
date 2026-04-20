@@ -22,6 +22,12 @@ import ScrPayment       from './screens/ScrPayment';
 import ScrInquiry       from './screens/ScrInquiry';
 import ScrWithdrawal    from './screens/ScrWithdrawal';
 
+import ScrAnnualFeeSearch  from './screens/ScrAnnualFeeSearch';
+import ScrAnnualFeeSetting from './screens/ScrAnnualFeeSetting';
+import ScrAnnualFeeDetail  from './screens/ScrAnnualFeeDetail';
+import ScrAnnualFeeBulk    from './screens/ScrAnnualFeeBulk';
+import ScrAnnualFeePayment from './screens/ScrAnnualFeePayment';
+
 import ScrTrainingSearch       from './screens/ScrTrainingSearch';
 import ScrTrainingSetting      from './screens/ScrTrainingSetting';
 import ScrTrainingFee          from './screens/ScrTrainingFee';
@@ -62,6 +68,13 @@ export default function App(): JSX.Element {
           <Route path="/payment"         element={<ScrPayment />} />
           <Route path="/inquiry"         element={<ScrInquiry />} />
           <Route path="/withdrawal"      element={<ScrWithdrawal />} />
+
+          {/* 年会費管理システム */}
+          <Route path="/annual/search"   element={<ScrAnnualFeeSearch />} />
+          <Route path="/annual/setting"  element={<ScrAnnualFeeSetting />} />
+          <Route path="/annual/detail"   element={<ScrAnnualFeeDetail />} />
+          <Route path="/annual/bulk"     element={<ScrAnnualFeeBulk />} />
+          <Route path="/annual/payment"  element={<ScrAnnualFeePayment />} />
 
           {/* 研修会システム */}
           <Route path="/training/search"         element={<ScrTrainingSearch />} />

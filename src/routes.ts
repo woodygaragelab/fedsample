@@ -20,9 +20,15 @@ export const routes: RouteDef[] = [
   { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理者メニュー' },
   { path: '/member/admin',  id: 'SCR-003', label: '会員',             group: '管理者メニュー' },
   { path: '/admission',     id: 'SCR-004', label: '◆入会',           group: '管理者メニュー' },
-  { path: '/payment',       id: 'SCR-006', label: '入金',           group: '管理者メニュー' },
+  { path: '/payment',       id: 'SCR-006', label: '入会時入金',     group: '管理者メニュー' },
   { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理者メニュー' },
   { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理者メニュー' },
+  // 年会費管理システム (SCR-401〜411)
+  { path: '/annual/search',  id: 'SCR-401', label: '会費設定検索',       group: '管理者メニュー' },
+  { path: '/annual/setting', id: 'SCR-402', label: '会費設定',           group: '管理者メニュー' },
+  { path: '/annual/detail',  id: 'SCR-403', label: '会費詳細設定',       group: '管理者メニュー' },
+  { path: '/annual/bulk',    id: 'SCR-404', label: '費用一括設定',       group: '管理者メニュー' },
+  { path: '/annual/payment', id: 'SCR-411', label: '入金システム(年)',   group: '管理者メニュー' },
   // 研修会システム (SCR-301〜311)
   { path: '/training/search',          id: 'SCR-301', label: '研修会設定検索',    group: '管理者メニュー' },
   { path: '/training/setting',         id: 'SCR-302', label: '研修会設定',         group: '管理者メニュー' },
