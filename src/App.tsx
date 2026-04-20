@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import { routes } from './routes';
+import ProtectedRoute from './auth/ProtectedRoute';
 
 function ScreenIdFooter(): JSX.Element {
   const { pathname } = useLocation();
@@ -64,45 +65,45 @@ export default function App(): JSX.Element {
           {/* 管理者ログイン */}
           <Route path="/admin/login"     element={<ScrAdminLogin />} />
 
-          {/* 管理システム */}
-          <Route path="/top"             element={<ScrTopMenu />} />
-          <Route path="/member/search"   element={<ScrMemberSearch />} />
-          <Route path="/member/admin"    element={<ScrMemberAdmin />} />
-          <Route path="/admission"       element={<ScrAdmission />} />
-          <Route path="/fee/search"      element={<ScrFeeSearch />} />
-          <Route path="/payment"         element={<ScrPayment />} />
-          <Route path="/inquiry"         element={<ScrInquiry />} />
-          <Route path="/withdrawal"      element={<ScrWithdrawal />} />
+          {/* 管理システム (要: admin ロール) */}
+          <Route path="/top"             element={<ProtectedRoute requiredRole="admin"><ScrTopMenu /></ProtectedRoute>} />
+          <Route path="/member/search"   element={<ProtectedRoute requiredRole="admin"><ScrMemberSearch /></ProtectedRoute>} />
+          <Route path="/member/admin"    element={<ProtectedRoute requiredRole="admin"><ScrMemberAdmin /></ProtectedRoute>} />
+          <Route path="/admission"       element={<ProtectedRoute requiredRole="admin"><ScrAdmission /></ProtectedRoute>} />
+          <Route path="/fee/search"      element={<ProtectedRoute requiredRole="admin"><ScrFeeSearch /></ProtectedRoute>} />
+          <Route path="/payment"         element={<ProtectedRoute requiredRole="admin"><ScrPayment /></ProtectedRoute>} />
+          <Route path="/inquiry"         element={<ProtectedRoute requiredRole="admin"><ScrInquiry /></ProtectedRoute>} />
+          <Route path="/withdrawal"      element={<ProtectedRoute requiredRole="admin"><ScrWithdrawal /></ProtectedRoute>} />
 
-          {/* アンケートシステム */}
-          <Route path="/anket/setting" element={<ScrAnketSetting />} />
+          {/* アンケートシステム (要: admin ロール) */}
+          <Route path="/anket/setting"   element={<ProtectedRoute requiredRole="admin"><ScrAnketSetting /></ProtectedRoute>} />
 
-          {/* 年会費管理システム */}
-          <Route path="/annual/search"   element={<ScrAnnualFeeSearch />} />
-          <Route path="/annual/setting"  element={<ScrAnnualFeeSetting />} />
-          <Route path="/annual/detail"   element={<ScrAnnualFeeDetail />} />
-          <Route path="/annual/bulk"     element={<ScrAnnualFeeBulk />} />
-          <Route path="/annual/payment"  element={<ScrAnnualFeePayment />} />
+          {/* 年会費管理システム (要: admin ロール) */}
+          <Route path="/annual/search"   element={<ProtectedRoute requiredRole="admin"><ScrAnnualFeeSearch /></ProtectedRoute>} />
+          <Route path="/annual/setting"  element={<ProtectedRoute requiredRole="admin"><ScrAnnualFeeSetting /></ProtectedRoute>} />
+          <Route path="/annual/detail"   element={<ProtectedRoute requiredRole="admin"><ScrAnnualFeeDetail /></ProtectedRoute>} />
+          <Route path="/annual/bulk"     element={<ProtectedRoute requiredRole="admin"><ScrAnnualFeeBulk /></ProtectedRoute>} />
+          <Route path="/annual/payment"  element={<ProtectedRoute requiredRole="admin"><ScrAnnualFeePayment /></ProtectedRoute>} />
 
-          {/* 研修会システム */}
-          <Route path="/training/search"         element={<ScrTrainingSearch />} />
-          <Route path="/training/setting"        element={<ScrTrainingSetting />} />
-          <Route path="/training/fee"            element={<ScrTrainingFee />} />
-          <Route path="/training/fee-detail"     element={<ScrTrainingFeeDetail />} />
-          <Route path="/training/payment"        element={<ScrTrainingPayment />} />
-          <Route path="/training/apply-pre"      element={<ScrTrainingApplyPre />} />
-          <Route path="/training/contact-list"   element={<ScrTrainingContactList />} />
-          <Route path="/training/apply-confirm"  element={<ScrTrainingApplyConfirm />} />
-          <Route path="/training/apply"          element={<ScrTrainingApply />} />
-          <Route path="/training/apply-complete" element={<ScrTrainingApplyComplete />} />
-          <Route path="/training/apply-cancel"   element={<ScrTrainingApplyCancel />} />
+          {/* 研修会システム (要: admin ロール) */}
+          <Route path="/training/search"         element={<ProtectedRoute requiredRole="admin"><ScrTrainingSearch /></ProtectedRoute>} />
+          <Route path="/training/setting"        element={<ProtectedRoute requiredRole="admin"><ScrTrainingSetting /></ProtectedRoute>} />
+          <Route path="/training/fee"            element={<ProtectedRoute requiredRole="admin"><ScrTrainingFee /></ProtectedRoute>} />
+          <Route path="/training/fee-detail"     element={<ProtectedRoute requiredRole="admin"><ScrTrainingFeeDetail /></ProtectedRoute>} />
+          <Route path="/training/payment"        element={<ProtectedRoute requiredRole="admin"><ScrTrainingPayment /></ProtectedRoute>} />
+          <Route path="/training/apply-pre"      element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyPre /></ProtectedRoute>} />
+          <Route path="/training/contact-list"   element={<ProtectedRoute requiredRole="admin"><ScrTrainingContactList /></ProtectedRoute>} />
+          <Route path="/training/apply-confirm"  element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyConfirm /></ProtectedRoute>} />
+          <Route path="/training/apply"          element={<ProtectedRoute requiredRole="admin"><ScrTrainingApply /></ProtectedRoute>} />
+          <Route path="/training/apply-complete" element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyComplete /></ProtectedRoute>} />
+          <Route path="/training/apply-cancel"   element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyCancel /></ProtectedRoute>} />
 
           {/* WEB マイページ */}
           <Route path="/web/login"       element={<ScrWebLogin />} />
-          <Route path="/web/home"        element={<ScrWebHome />} />
-          <Route path="/web/reginfo"     element={<ScrWebRegInfo />} />
-          <Route path="/web/contact"     element={<ScrWebContact />} />
-          <Route path="/web/withdraw"    element={<ScrWebWithdraw />} />
+          <Route path="/web/home"        element={<ProtectedRoute requiredRole="member"><ScrWebHome /></ProtectedRoute>} />
+          <Route path="/web/reginfo"     element={<ProtectedRoute requiredRole="member"><ScrWebRegInfo /></ProtectedRoute>} />
+          <Route path="/web/contact"     element={<ProtectedRoute requiredRole="member"><ScrWebContact /></ProtectedRoute>} />
+          <Route path="/web/withdraw"    element={<ProtectedRoute requiredRole="member"><ScrWebWithdraw /></ProtectedRoute>} />
 
           {/* WEB 入会申込 */}
           <Route path="/apply/form"      element={<ScrApplyForm />} />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '../routes';
 import type { RouteDef, ScreenGroup } from '../routes';
+import { useAuth } from '../auth/AuthContext';
 
 const GROUP_ORDER: ScreenGroup[] = ['管理者メニュー', 'WEBマイページ', 'WEB入会申込'];
 
@@ -50,6 +51,8 @@ function resolveSubMenu(group: ScreenGroup, pathname: string): string | null {
 export default function Header(): JSX.Element {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const { isAuthenticated, user, logout } = useAuth();
 
   const [selectedGroup, setSelectedGroup] = useState<ScreenGroup>(() =>
     resolveGroup(location.pathname)
@@ -130,22 +133,37 @@ export default function Header(): JSX.Element {
             {r.label}
           </NavLink>
         ))}
-        {(() => {
-          const adminLogin = groups[selectedGroup].find((r) => r.id === 'SCR-010');
-          const webLogin   = groups[selectedGroup].find((r) => r.id === 'SCR-101');
-          const loginRoute = adminLogin ?? webLogin;
-          return loginRoute ? (
-            <NavLink
-              to={loginRoute.path}
-              end
-              className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
-              title={`${loginRoute.id} ログイン`}
-              style={{ marginLeft: 'auto' }}
+        {isAuthenticated ? (
+          <span style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 12 }}>{user?.name}</span>
+            <button
+              className="nav-link"
+              onClick={async () => {
+                await logout();
+                navigate(GROUP_DEFAULT_PATH[selectedGroup]);
+              }}
             >
-              ログイン
-            </NavLink>
-          ) : null;
-        })()}
+              ログオフ
+            </button>
+          </span>
+        ) : (
+          (() => {
+            const adminLogin = groups[selectedGroup].find((r) => r.id === 'SCR-010');
+            const webLogin   = groups[selectedGroup].find((r) => r.id === 'SCR-101');
+            const loginRoute = adminLogin ?? webLogin;
+            return loginRoute ? (
+              <NavLink
+                to={loginRoute.path}
+                end
+                className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                title={`${loginRoute.id} ログイン`}
+                style={{ marginLeft: 'auto' }}
+              >
+                ログイン
+              </NavLink>
+            ) : null;
+          })()
+        )}
       </div>
 
       {/* 3段目: サブメニュー項目（openSubMenu が設定されているときのみ表示） */}
