@@ -22,6 +22,7 @@ import ScrPayment       from './screens/ScrPayment';
 import ScrInquiry       from './screens/ScrInquiry';
 import ScrWithdrawal    from './screens/ScrWithdrawal';
 
+import ScrAnketSetting    from './screens/ScrAnketSetting';
 import ScrAnnualFeeSearch  from './screens/ScrAnnualFeeSearch';
 import ScrAnnualFeeSetting from './screens/ScrAnnualFeeSetting';
 import ScrAnnualFeeDetail  from './screens/ScrAnnualFeeDetail';
@@ -68,6 +69,9 @@ export default function App(): JSX.Element {
           <Route path="/payment"         element={<ScrPayment />} />
           <Route path="/inquiry"         element={<ScrInquiry />} />
           <Route path="/withdrawal"      element={<ScrWithdrawal />} />
+
+          {/* アンケートシステム */}
+          <Route path="/anket/setting" element={<ScrAnketSetting />} />
 
           {/* 年会費管理システム */}
           <Route path="/annual/search"   element={<ScrAnnualFeeSearch />} />

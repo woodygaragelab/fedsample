@@ -23,6 +23,8 @@ export const routes: RouteDef[] = [
   { path: '/payment',       id: 'SCR-006', label: '入会時入金',     group: '管理者メニュー' },
   { path: '/inquiry',       id: 'SCR-007', label: '◆問合せ',         group: '管理者メニュー' },
   { path: '/withdrawal',    id: 'SCR-008', label: '◆退会',           group: '管理者メニュー' },
+  // アンケートシステム (SCR-501〜)
+  { path: '/anket/setting', id: 'SCR-501', label: 'アンケート設定', group: '管理者メニュー' },
   // 年会費管理システム (SCR-401〜411)
   { path: '/annual/search',  id: 'SCR-401', label: '会費設定検索',       group: '管理者メニュー' },
   { path: '/annual/setting', id: 'SCR-402', label: '会費設定',           group: '管理者メニュー' },
