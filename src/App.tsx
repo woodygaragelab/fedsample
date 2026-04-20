@@ -13,6 +13,7 @@ function ScreenIdFooter(): JSX.Element {
   );
 }
 
+import ScrAdminLogin    from './screens/ScrAdminLogin';
 import ScrTopMenu       from './screens/ScrTopMenu';
 import ScrMemberSearch  from './screens/ScrMemberSearch';
 import ScrMemberAdmin   from './screens/ScrMemberAdmin';
@@ -59,6 +60,9 @@ export default function App(): JSX.Element {
         <Routes>
           {/* WEB マイページ ログインを初期画面に */}
           <Route path="/"                element={<Navigate to="/web/login" replace />} />
+
+          {/* 管理者ログイン */}
+          <Route path="/admin/login"     element={<ScrAdminLogin />} />
 
           {/* 管理システム */}
           <Route path="/top"             element={<ScrTopMenu />} />

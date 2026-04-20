@@ -6,7 +6,7 @@ import type { RouteDef, ScreenGroup } from '../routes';
 const GROUP_ORDER: ScreenGroup[] = ['管理者メニュー', 'WEBマイページ', 'WEB入会申込'];
 
 const GROUP_DEFAULT_PATH: Record<ScreenGroup, string> = {
-  '管理者メニュー': '/member/search',
+  '管理者メニュー': '/admin/login',
   'WEBマイページ': '/web/login',
   'WEB入会申込':  '/apply/form',
 };
@@ -70,7 +70,7 @@ export default function Header(): JSX.Element {
   const subMenuIds = new Set(subMenuDefs.flatMap((sm) => sm.ids));
 
   const row2Routes = groups[selectedGroup].filter(
-    (r) => r.id !== 'SCR-001' && r.id !== 'SCR-101' && !subMenuIds.has(r.id)
+    (r) => r.id !== 'SCR-001' && r.id !== 'SCR-101' && r.id !== 'SCR-010' && !subMenuIds.has(r.id)
   );
 
   const activeSubMenuDef = subMenuDefs.find((sm) => sm.label === openSubMenu);
@@ -130,17 +130,22 @@ export default function Header(): JSX.Element {
             {r.label}
           </NavLink>
         ))}
-        {groups[selectedGroup].find((r) => r.id === 'SCR-101') && (
-          <NavLink
-            to="/web/login"
-            end
-            className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
-            title="SCR-101 ログイン"
-            style={{ marginLeft: 'auto' }}
-          >
-            ログイン
-          </NavLink>
-        )}
+        {(() => {
+          const adminLogin = groups[selectedGroup].find((r) => r.id === 'SCR-010');
+          const webLogin   = groups[selectedGroup].find((r) => r.id === 'SCR-101');
+          const loginRoute = adminLogin ?? webLogin;
+          return loginRoute ? (
+            <NavLink
+              to={loginRoute.path}
+              end
+              className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+              title={`${loginRoute.id} ログイン`}
+              style={{ marginLeft: 'auto' }}
+            >
+              ログイン
+            </NavLink>
+          ) : null;
+        })()}
       </div>
 
       {/* 3段目: サブメニュー項目（openSubMenu が設定されているときのみ表示） */}

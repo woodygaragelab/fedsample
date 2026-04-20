@@ -16,6 +16,7 @@ export interface TopMenuItem {
 
 export const routes: RouteDef[] = [
   // 管理者メニュー
+  { path: '/admin/login',   id: 'SCR-010', label: 'ログイン',        group: '管理者メニュー' },
   { path: '/',              id: 'SCR-001', label: 'TopMenu',        group: '管理者メニュー' },
   { path: '/member/search', id: 'SCR-002', label: '会員検索',         group: '管理者メニュー' },
   { path: '/member/admin',  id: 'SCR-003', label: '会員',             group: '管理者メニュー' },
