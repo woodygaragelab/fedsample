@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: fedsample API
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 10
+    Environment:
+      Variables:
+        STAGE: !Ref Stage
+
+  HttpApi:
+    CorsConfiguration:
+      AllowOrigins:
+        - "http://localhost:5173"
+        - !Sub "https://${AllowOrigin}"
+      AllowMethods:
+        - GET
+        - POST
+        - OPTIONS
+      AllowHeaders:
+        - Content-Type
+        - Authorization
+
+Parameters:
+  Stage:
+    Type: String
+    Default: dev
+    AllowedValues: [dev, prod]
+
+  AllowOrigin:
+    Type: String
+    Default: "example.com"
+    Description: "Frontend domain (e.g. app.example.com)"
+
+Resources:
+
+  SearchMembersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${Stage}-searchMembers"
+      CodeUri: searchMembers/
+      Handler: index.handler
+      Description: Search member DB and return list
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            Path: /members/search
+            Method: GET
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com"

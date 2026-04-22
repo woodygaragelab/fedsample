@@ -1,45 +1,172 @@
 // SCR-002 会員検索画面
-// 自動生成: 元モックアップHTMLをそのまま React で描画
-const html = `<div class="admin-win">
-    <div class="admin-titlebar">🔵 会員検索 システム管理者<span>✕</span></div>
-    <div class="admin-toolbar">
-      <button class="btn btn-blue btn-sm">新　規</button>
-      <button class="btn btn-gray btn-sm">戻　る</button>
-      <button class="btn btn-gray btn-sm">❓</button>
-    </div>
-    <div class="admin-content">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
-        <label>検索ワード</label>
-        <input type="text" style="width:200px;" placeholder="">
-        <button class="btn btn-red btn-sm">検　索</button>
-        <label><input type="checkbox" checked> 退会除く</label>
-        <select style="width:90px;"><option>30件表示</option><option>50件表示</option><option>100件表示</option></select>
-        <span style="font-size:11px; color:#555;">（ 1–30 / 647 ）</span>
-        <button class="btn btn-gray btn-sm">«</button>
-        <button class="btn btn-gray btn-sm">»</button>
-        <button class="btn btn-blue btn-sm">CSV出力</button>
-      </div>
-      <table class="list-tbl">
-        <tr><th>ID</th><th>会員No</th><th>会員区分</th><th>法人名等</th><th>施設名</th><th>入会日</th><th>都道府県</th></tr>
-        <tr class="selected"><td>689</td><td></td><td>正会員</td><td>XX法人サンプル会</td><td>サンプルリリ施設</td><td>2021/07/14</td><td>東京都</td></tr>
-        <tr><td>688</td><td></td><td>正会員</td><td>XX法人テストA</td><td>テストAリリリリ施設</td><td>2021/07/13</td><td>東京都</td></tr>
-        <tr><td>685</td><td></td><td>正会員</td><td>あいうえお法人</td><td>あいうえおリリ施設</td><td>2021/07/08</td><td>東京都</td></tr>
-        <tr><td>684</td><td></td><td>正会員</td><td>てすと法人</td><td>てすとリリ施設</td><td>2021/07/08</td><td>東京都</td></tr>
-        <tr><td>681</td><td>B1995</td><td>個人会員</td><td>（テスト）志賀親</td><td></td><td>2021/07/06</td><td></td></tr>
-        <tr><td>680</td><td>C1994</td><td>賛助会員</td><td>（テスト）株式会社 社会保険情報...</td><td></td><td>2021/07/06</td><td></td></tr>
-        <tr><td>679</td><td>A1993</td><td>正会員</td><td>（テスト）XX法人 水野会</td><td>（テスト）水野出版制作即印刷業施設</td><td>2021/07/06</td><td></td></tr>
-        <tr><td>677</td><td>B2004</td><td>個人会員</td><td>豊田 哲平</td><td></td><td>2021/06/29</td><td>茨城県</td></tr>
-        <tr><td>676</td><td>B2003</td><td>個人会員</td><td>井会　木下三郎</td><td></td><td>2021/06/29</td><td>東京都</td></tr>
-        <tr><td>675</td><td>B2002</td><td>個人会員</td><td>山田 三郎</td><td></td><td>2021/03/25</td><td>東京都</td></tr>
-      </table>
-    </div>
-    <div class="admin-statusbar"><span>会員検索</span><span>NumLock 📊 ▣ ▣ ▣</span></div>
-  </div>`;
+import { useState } from 'react';
+import { searchMembers, MemberRecord } from '../api/memberApi';
+
+const PAGE_SIZE_OPTIONS = [30, 50, 100];
 
 export default function ScrMemberSearch(): JSX.Element {
+  const [keyword, setKeyword] = useState('');
+  const [excludeWithdrawal, setExcludeWithdrawal] = useState(true);
+  const [pageSize, setPageSize] = useState(30);
+  const [page, setPage] = useState(1);
+  const [members, setMembers] = useState<MemberRecord[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [searched, setSearched] = useState(false);
+
+  const totalPages = Math.ceil(total / pageSize);
+  const start = total === 0 ? 0 : (page - 1) * pageSize + 1;
+  const end = Math.min(page * pageSize, total);
+
+  async function handleSearch(targetPage = 1) {
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await searchMembers({ keyword, excludeWithdrawal, pageSize, page: targetPage });
+      setMembers(result.members);
+      setTotal(result.total);
+      setPage(targetPage);
+      setSearched(true);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : '検索に失敗しました。');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') handleSearch();
+  }
+
   return (
     <div className="screen active" id="scr002">
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="admin-win">
+        <div className="admin-titlebar">
+          🔵 会員検索 システム管理者<span>✕</span>
+        </div>
+        <div className="admin-toolbar">
+          <button className="btn btn-blue btn-sm">新　規</button>
+          <button className="btn btn-gray btn-sm">戻　る</button>
+          <button className="btn btn-gray btn-sm">❓</button>
+        </div>
+        <div className="admin-content">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8, flexWrap: 'wrap' }}>
+            <label>検索ワード</label>
+            <input
+              type="text"
+              style={{ width: 200 }}
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder=""
+            />
+            <button
+              className="btn btn-red btn-sm"
+              onClick={() => handleSearch()}
+              disabled={loading}
+            >
+              {loading ? '検索中…' : '検　索'}
+            </button>
+            <label>
+              <input
+                type="checkbox"
+                checked={excludeWithdrawal}
+                onChange={(e) => setExcludeWithdrawal(e.target.checked)}
+              />{' '}
+              退会除く
+            </label>
+            <select
+              style={{ width: 90 }}
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+                if (searched) handleSearch(1);
+              }}
+            >
+              {PAGE_SIZE_OPTIONS.map((n) => (
+                <option key={n} value={n}>{n}件表示</option>
+              ))}
+            </select>
+            {searched && (
+              <span style={{ fontSize: 11, color: '#555' }}>
+                （ {start}–{end} / {total} ）
+              </span>
+            )}
+            <button
+              className="btn btn-gray btn-sm"
+              onClick={() => handleSearch(Math.max(1, page - 1))}
+              disabled={!searched || page <= 1 || loading}
+            >
+              «
+            </button>
+            <button
+              className="btn btn-gray btn-sm"
+              onClick={() => handleSearch(Math.min(totalPages, page + 1))}
+              disabled={!searched || page >= totalPages || loading}
+            >
+              »
+            </button>
+            <button className="btn btn-blue btn-sm">CSV出力</button>
+          </div>
+
+          {error && (
+            <div style={{ color: 'red', fontSize: 12, marginBottom: 8 }}>{error}</div>
+          )}
+
+          <table className="list-tbl">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>会員No</th>
+                <th>会員区分</th>
+                <th>法人名等</th>
+                <th>施設名</th>
+                <th>入会日</th>
+                <th>都道府県</th>
+              </tr>
+            </thead>
+            <tbody>
+              {!searched && !loading && (
+                <tr>
+                  <td colSpan={7} style={{ textAlign: 'center', color: '#888', fontSize: 12 }}>
+                    検索ワードを入力して「検索」ボタンを押してください
+                  </td>
+                </tr>
+              )}
+              {loading && (
+                <tr>
+                  <td colSpan={7} style={{ textAlign: 'center', color: '#555', fontSize: 12 }}>
+                    検索中…
+                  </td>
+                </tr>
+              )}
+              {!loading && searched && members.length === 0 && (
+                <tr>
+                  <td colSpan={7} style={{ textAlign: 'center', color: '#888', fontSize: 12 }}>
+                    該当する会員が見つかりませんでした
+                  </td>
+                </tr>
+              )}
+              {!loading && members.map((m) => (
+                <tr key={m.id}>
+                  <td>{m.id}</td>
+                  <td>{m.memberNo}</td>
+                  <td>{m.memberType}</td>
+                  <td>{m.corporateName}</td>
+                  <td>{m.facilityName}</td>
+                  <td>{m.joinDate}</td>
+                  <td>{m.prefecture}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="admin-statusbar">
+          <span>会員検索</span>
+          <span>NumLock 📊 ▣ ▣ ▣</span>
+        </div>
+      </div>
     </div>
   );
 }
