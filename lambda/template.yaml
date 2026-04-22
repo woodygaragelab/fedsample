@@ -13,8 +13,7 @@ Globals:
   HttpApi:
     CorsConfiguration:
       AllowOrigins:
-        - "http://localhost:5173"
-        - !Sub "https://${AllowOrigin}"
+        - "*"
       AllowMethods:
         - GET
         - POST
@@ -28,11 +27,6 @@ Parameters:
     Type: String
     Default: dev
     AllowedValues: [dev, prod]
-
-  AllowOrigin:
-    Type: String
-    Default: "example.com"
-    Description: "Frontend domain (e.g. app.example.com)"
 
 Resources:
 
