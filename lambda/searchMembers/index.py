@@ -13,18 +13,18 @@ Response: { total: int, members: list }
 import json
 
 MEMBER_MASTER = [
-    {"id": 689, "memberNo": "",      "memberType": "Sei-kaiin",    "corporateName": "XX Hojin Sample-kai",              "facilityName": "Sample施設",              "joinDate": "2021/07/14", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 688, "memberNo": "",      "memberType": "Sei-kaiin",    "corporateName": "XX Hojin Test-A",                  "facilityName": "Test-A 施設",              "joinDate": "2021/07/13", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 685, "memberNo": "",      "memberType": "Sei-kaiin",    "corporateName": "Aiueo Hojin",                      "facilityName": "Aiueo 施設",               "joinDate": "2021/07/08", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 684, "memberNo": "",      "memberType": "Sei-kaiin",    "corporateName": "Test Hojin",                       "facilityName": "Test 施設",                "joinDate": "2021/07/08", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 681, "memberNo": "B1995", "memberType": "Kojin-kaiin",  "corporateName": "(Test) Shiga Chika",               "facilityName": "",                         "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
-    {"id": 680, "memberNo": "C1994", "memberType": "Sanjo-kaiin",  "corporateName": "(Test) Kabushiki Shakai Hoken",    "facilityName": "",                         "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
-    {"id": 679, "memberNo": "A1993", "memberType": "Sei-kaiin",    "corporateName": "(Test) XX Hojin Mizuno-kai",       "facilityName": "(Test) Mizuno 施設",       "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
-    {"id": 677, "memberNo": "B2004", "memberType": "Kojin-kaiin",  "corporateName": "Toyota Teppei",                    "facilityName": "",                         "joinDate": "2021/06/29", "prefecture": "Ibaraki",  "withdrawn": False},
-    {"id": 676, "memberNo": "B2003", "memberType": "Kojin-kaiin",  "corporateName": "Ikai Kinoshita Saburo",            "facilityName": "",                         "joinDate": "2021/06/29", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 675, "memberNo": "B2002", "memberType": "Kojin-kaiin",  "corporateName": "Yamada Saburo",                    "facilityName": "",                         "joinDate": "2021/03/25", "prefecture": "Tokyo",    "withdrawn": False},
-    {"id": 670, "memberNo": "A1990", "memberType": "Sei-kaiin",    "corporateName": "Taikai-zumi Test-kai",             "facilityName": "Taikai 施設",              "joinDate": "2020/01/01", "prefecture": "Osaka",    "withdrawn": True},
-    {"id": 660, "memberNo": "B1980", "memberType": "Kojin-kaiin",  "corporateName": "Taikai Kaiin Tanaka",              "facilityName": "",                         "joinDate": "2019/04/01", "prefecture": "Aichi",    "withdrawn": True},
+    {"id": 689, "memberNo": "",      "memberType": "正会員",    "corporateName": "ＸＸ法人三河会",     "facilityName": "岡崎施設",       "joinDate": "2021/07/14", "prefecture": "愛知",    "withdrawn": False},
+    {"id": 688, "memberNo": "",      "memberType": "正会員",    "corporateName": "ＸＸ法人大阪Ａ",   "facilityName": "テストＡ施設",    "joinDate": "2021/07/13", "prefecture": "東京",    "withdrawn": False},
+    {"id": 685, "memberNo": "",      "memberType": "正会員",    "corporateName": "法人小田",     "facilityName": "岐阜施設",  "joinDate": "2021/07/08", "prefecture": "Tokyo",    "withdrawn": False},
+    {"id": 684, "memberNo": "",      "memberType": "正会員",    "corporateName": "テスト法人",        "facilityName": "テスト施設",      "joinDate": "2021/07/08", "prefecture": "東京",    "withdrawn": False},
+    {"id": 681, "memberNo": "B1995", "memberType": "個人会員",  "corporateName": "浅井株式会社",          "facilityName": "施設小谷",                "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
+    {"id": 680, "memberNo": "C1994", "memberType": "賛助会員",  "corporateName": "株式会社朝倉",      "facilityName": "",                "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
+    {"id": 679, "memberNo": "A1993", "memberType": "正会員",    "corporateName": "ＸＸ法人足利会",    "facilityName": "（テスト）二条施設", "joinDate": "2021/07/06", "prefecture": "",         "withdrawn": False},
+    {"id": 677, "memberNo": "B2004", "memberType": "個人会員",  "corporateName": "明智十平",          "facilityName": "",                   "joinDate": "2021/06/29", "prefecture": "滋賀",  "withdrawn": False},
+    {"id": 676, "memberNo": "B2003", "memberType": "個人会員",  "corporateName": "木下三郎",          "facilityName": "",                   "joinDate": "2021/06/29", "prefecture": "神奈川",    "withdrawn": False},
+    {"id": 675, "memberNo": "B2002", "memberType": "個人会員",  "corporateName": "柴田勝",          "facilityName": "",                   "joinDate": "2021/03/25", "prefecture": "埼玉",    "withdrawn": False},
+    {"id": 670, "memberNo": "A1990", "memberType": "正会員",    "corporateName": "退会済みテスト会",   "facilityName": "退会施設",           "joinDate": "2020/01/01", "prefecture": "大阪",    "withdrawn": True},
+    {"id": 660, "memberNo": "B1980", "memberType": "個人会員",  "corporateName": "退会会員小早川",       "facilityName": "",                  "joinDate": "2019/04/01", "prefecture": "兵庫",    "withdrawn": True},
 ]
 
 
