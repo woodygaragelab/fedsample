@@ -91,11 +91,6 @@ export default function App(): JSX.Element {
           <Route path="/training/fee"            element={<ProtectedRoute requiredRole="admin"><ScrTrainingFee /></ProtectedRoute>} />
           <Route path="/training/fee-detail"     element={<ProtectedRoute requiredRole="admin"><ScrTrainingFeeDetail /></ProtectedRoute>} />
           <Route path="/training/payment"        element={<ProtectedRoute requiredRole="admin"><ScrTrainingPayment /></ProtectedRoute>} />
-          <Route path="/training/apply-pre"      element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyPre /></ProtectedRoute>} />
-          <Route path="/training/apply-confirm"  element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyConfirm /></ProtectedRoute>} />
-          <Route path="/training/apply"          element={<ProtectedRoute requiredRole="admin"><ScrTrainingApply /></ProtectedRoute>} />
-          <Route path="/training/apply-complete" element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyComplete /></ProtectedRoute>} />
-          <Route path="/training/apply-cancel"   element={<ProtectedRoute requiredRole="admin"><ScrTrainingApplyCancel /></ProtectedRoute>} />
 
           {/* WEB マイページ */}
           <Route path="/web/login"       element={<ScrWebLogin />} />
@@ -103,7 +98,12 @@ export default function App(): JSX.Element {
           <Route path="/web/reginfo"     element={<ProtectedRoute requiredRole="member"><ScrWebRegInfo /></ProtectedRoute>} />
           <Route path="/web/contact"     element={<ProtectedRoute requiredRole="member"><ScrWebContact /></ProtectedRoute>} />
           <Route path="/web/withdraw"    element={<ProtectedRoute requiredRole="member"><ScrWebWithdraw /></ProtectedRoute>} />
-          <Route path="/training/contact-list" element={<ProtectedRoute requiredRole="member"><ScrTrainingContactList /></ProtectedRoute>} />
+          <Route path="/training/contact-list"   element={<ProtectedRoute requiredRole="member"><ScrTrainingContactList /></ProtectedRoute>} />
+          <Route path="/training/apply-pre"      element={<ProtectedRoute requiredRole="member"><ScrTrainingApplyPre /></ProtectedRoute>} />
+          <Route path="/training/apply-confirm"  element={<ProtectedRoute requiredRole="member"><ScrTrainingApplyConfirm /></ProtectedRoute>} />
+          <Route path="/training/apply"          element={<ProtectedRoute requiredRole="member"><ScrTrainingApply /></ProtectedRoute>} />
+          <Route path="/training/apply-complete" element={<ProtectedRoute requiredRole="member"><ScrTrainingApplyComplete /></ProtectedRoute>} />
+          <Route path="/training/apply-cancel"   element={<ProtectedRoute requiredRole="member"><ScrTrainingApplyCancel /></ProtectedRoute>} />
 
           {/* WEB 入会申込 */}
           <Route path="/apply/form"      element={<ScrApplyForm />} />
