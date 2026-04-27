@@ -97,7 +97,7 @@ export default function Header(): JSX.Element {
     <header className="app-header">
       {/* 1段目: ブランド + グループタブ */}
       <div className="header-row1">
-        <span className="brand">XXXXXXシステム</span>
+        <span className="brand">XXXXXシステム</span>
         <nav className="group-tabs">
           {GROUP_ORDER.map((g) => (
             <button
