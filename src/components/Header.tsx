@@ -159,7 +159,7 @@ export default function Header(): JSX.Element {
                 title={`${r.id} ${r.label} を別ウィンドウで開く`}
                 onClick={() => openScreenWindow(r)}
               >
-                ⧉
+              {r.label}2
               </button>
             )}
           </span>
@@ -217,7 +217,7 @@ export default function Header(): JSX.Element {
                   title={`${r.id} ${r.label} を別ウィンドウで開く`}
                   onClick={() => openScreenWindow(r)}
                 >
-                  ⧉
+               {r.label}3
                 </button>
               )}
             </span>
