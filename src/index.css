@@ -253,6 +253,18 @@ body { padding-top: 0; }
 .app-header .nav-link:hover { background: rgba(255,255,255,0.25); }
 .app-header .nav-link.active { background: #FF8C00; font-weight: bold; }
 
+/* 別ウィンドウで開くボタン */
+.app-header .nav-link-group {
+  display: inline-flex; align-items: center; gap: 2px;
+}
+.app-header .popup-btn {
+  background: rgba(255,255,255,0.12);
+  color: #fff; border: none; padding: 3px 6px;
+  font-size: 11px; border-radius: 3px; cursor: pointer;
+  font-family: inherit; line-height: 1;
+}
+.app-header .popup-btn:hover { background: rgba(255,255,255,0.25); }
+
 /* ===================== 研修会システム (SCR-301〜311) ===================== */
 .ts-admin-window {
   border:2px solid #888; border-radius:4px; background:#ECE9D8;

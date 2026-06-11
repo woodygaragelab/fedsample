@@ -12,6 +12,13 @@ const GROUP_DEFAULT_PATH: Record<ScreenGroup, string> = {
   'WEB入会申込':  '/apply/form',
 };
 
+// 管理者メニューのうち、別ウィンドウで起動できる画面 (SCR-001〜SCR-008)
+const POPUP_SCREEN_IDS = new Set(['SCR-001', 'SCR-002', 'SCR-003', 'SCR-004', 'SCR-006', 'SCR-007', 'SCR-008']);
+
+function openScreenWindow(r: RouteDef) {
+  window.open(r.path, r.id, 'width=1000,height=700,resizable=yes,scrollbars=yes');
+}
+
 type SubMenuDef = { label: string; ids: string[]; defaultPath?: string };
 
 const SUB_MENUS: Partial<Record<ScreenGroup, SubMenuDef[]>> = {
@@ -113,6 +120,19 @@ export default function Header(): JSX.Element {
 
       {/* 2段目: サブメニューカテゴリボタン（左端）+ 処理名ナビリンク */}
       <div className="header-row2">
+        {isAuthenticated && selectedGroup === '管理者メニュー' && (() => {
+          const topMenuRoute = groups['管理者メニュー'].find((r) => r.id === 'SCR-001');
+          return topMenuRoute ? (
+            <button
+              type="button"
+              className="nav-link"
+              title={`${topMenuRoute.id} ${topMenuRoute.label} を別ウィンドウで開く`}
+              onClick={() => openScreenWindow(topMenuRoute)}
+            >
+              ⧉ {topMenuRoute.label}
+            </button>
+          ) : null;
+        })()}
         {subMenuDefs.map((sm) => (
           <button
             key={sm.label}
@@ -123,15 +143,26 @@ export default function Header(): JSX.Element {
           </button>
         ))}
         {row2Routes.map((r) => (
-          <NavLink
-            key={r.path}
-            to={r.path}
-            end
-            className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
-            title={`${r.id} ${r.label}`}
-          >
-            {r.label}
-          </NavLink>
+          <span key={r.path} className="nav-link-group">
+            <NavLink
+              to={r.path}
+              end
+              className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+              title={`${r.id} ${r.label}`}
+            >
+              {r.label}
+            </NavLink>
+            {isAuthenticated && POPUP_SCREEN_IDS.has(r.id) && (
+              <button
+                type="button"
+                className="popup-btn"
+                title={`${r.id} ${r.label} を別ウィンドウで開く`}
+                onClick={() => openScreenWindow(r)}
+              >
+                ⧉
+              </button>
+            )}
+          </span>
         ))}
         {isAuthenticated ? (
           <span style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -170,15 +201,26 @@ export default function Header(): JSX.Element {
       {row3Routes.length > 0 && (
         <div className="header-row3">
           {row3Routes.map((r) => (
-            <NavLink
-              key={r.path}
-              to={r.path}
-              end
-              className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
-              title={`${r.id} ${r.label}`}
-            >
-              {r.label}
-            </NavLink>
+            <span key={r.path} className="nav-link-group">
+              <NavLink
+                to={r.path}
+                end
+                className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+                title={`${r.id} ${r.label}`}
+              >
+                {r.label}
+              </NavLink>
+              {isAuthenticated && POPUP_SCREEN_IDS.has(r.id) && (
+                <button
+                  type="button"
+                  className="popup-btn"
+                  title={`${r.id} ${r.label} を別ウィンドウで開く`}
+                  onClick={() => openScreenWindow(r)}
+                >
+                  ⧉
+                </button>
+              )}
+            </span>
           ))}
         </div>
       )}
