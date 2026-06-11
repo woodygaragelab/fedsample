@@ -4,7 +4,7 @@ import ScreenTitleBar from '../components/ScreenTitleBar';
 // 自動生成: 元モックアップHTMLをそのまま React で描画
 const html = `<div class="public-page web-page" style="max-width:900px; margin:0 auto; border:1px solid #ddd;">
     <div class="public-header">
-      🔵 一般社団法人 日本リリリリ施設・施設協会
+      🔵 自動入力研究会
     </div>
     <div class="public-body">
       <div class="web-section-hdr">新規申し込み</div>
@@ -16,26 +16,26 @@ const html = `<div class="public-page web-page" style="max-width:900px; margin:0
         </div>
       </div>
       <div class="pub-form-section">
-        <div class="pub-section-title">法人・施設の基本情報</div>
+        <div class="pub-section-title">法人・部門の基本情報</div>
         <div class="pub-form-content">
           <div class="pub-row"><label>法人名 ※</label><input type="text" value="XX法人サンプル会" style="width:280px;"></div>
-          <div class="pub-row"><label>法人名フリガナ ※</label><input type="text" value="イショウホウジンサンプルカイ" style="width:280px;"></div>
-          <div class="pub-row"><label>施設名 ※</label><input type="text" value="サンプルリリ施設" style="width:280px;"></div>
-          <div class="pub-row"><label>施設名フリガナ ※</label><input type="text" value="サンプルリリビョウイン" style="width:280px;"></div>
-          <div class="pub-row"><label>施設種別 ※</label><select style="width:200px;"><option selected>施設</option><option>クリニック</option><option>施設</option></select></div>
+          <div class="pub-row"><label>法人名フリガナ ※</label><input type="text" value="ホウジンサンプルカイ" style="width:280px;"></div>
+          <div class="pub-row"><label>部門名 ※</label><input type="text" value="サンプル部門" style="width:280px;"></div>
+          <div class="pub-row"><label>部門名フリガナ ※</label><input type="text" value="サンプルブモン" style="width:280px;"></div>
+          <div class="pub-row"><label>部門種別 ※</label><select style="width:200px;"><option selected>部門</option><option>開発部</option><option>部門</option></select></div>
           <div class="pub-row"><label>郵便番号 ※</label><input type="text" value="1060051" style="width:80px;"> <button class="btn btn-gray btn-sm">住所検索</button></div>
           <div class="pub-row"><label>都道府県 ※</label><select style="width:100px;"><option selected>東京都</option></select></div>
-          <div class="pub-row"><label>住所 ※</label><input type="text" value="東京都港区芝公園1-1" style="width:280px;"></div>
-          <div class="pub-row"><label>TEL ※</label><input type="text" value="03-1111-1010" style="width:150px;"> 内線<input type="text" style="width:60px;"></div>
+          <div class="pub-row"><label>住所 ※</label><input type="text" value="東京都品川区1-1" style="width:280px;"></div>
+          <div class="pub-row"><label>TEL ※</label><input type="text" value="03-1111-0000" style="width:150px;"> 内線<input type="text" style="width:60px;"></div>
           <div class="pub-row"><label>FAX</label><input type="text" style="width:150px;"></div>
-          <div class="pub-row"><label>法人代表者役職 ※</label><select style="width:100px;"><option>代表</option><option>理事長</option><option>院長</option></select></div>
-          <div class="pub-row"><label>法人代表者名 ※</label><input type="text" value="志公園 太郎" style="width:200px;"> &nbsp;<input type="text" placeholder="フリガナ" value="シバコウエン タロウ" style="width:180px;"></div>
+          <div class="pub-row"><label>法人代表者役職 ※</label><select style="width:100px;"><option>代表</option><option>部長</option><option>課長</option></select></div>
+          <div class="pub-row"><label>法人代表者名 ※</label><input type="text" value="研究 太郎" style="width:200px;"> &nbsp;<input type="text" placeholder="フリガナ" value="シバコウエン タロウ" style="width:180px;"></div>
         </div>
       </div>
       <div class="pub-form-section">
         <div class="pub-section-title">連絡担当者</div>
         <div class="pub-form-content">
-          <div class="pub-row"><label>担当者名 ※</label><input type="text" value="志公園 太郎" style="width:180px;"> &nbsp;<input type="text" placeholder="フリガナ" value="シバコウエン タロウ" style="width:180px;"></div>
+          <div class="pub-row"><label>担当者名 ※</label><input type="text" value="品川 太郎" style="width:180px;"> &nbsp;<input type="text" placeholder="フリガナ" value="シバコウエン タロウ" style="width:180px;"></div>
           <div class="pub-row"><label>役職</label><select style="width:100px;"><option>代表</option></select></div>
           <div class="pub-row"><label>担当者メール ※</label><input type="email" value="shiba@example.com" style="width:250px;"></div>
           <div class="pub-row"><label>マイページ管理メール</label><input type="email" style="width:250px;" placeholder="未入力時は担当者メールを使用"></div>
